@@ -1,4 +1,4 @@
-<%= form_with(model: @blog, local: true) do |form| %>
+<%= form_with(model: @blog, local: true, url: choose_new_or_edit) do |form| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
@@ -15,7 +15,7 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "つぶやく" %>
 <% end %>
 
 <%= link_to "つぶやき一覧画面にもどる", blogs_path %>
